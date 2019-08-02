@@ -1,20 +1,56 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Conversation Report</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 lable-input" style="margin-top: 0px;">Enviroment:</div>
+            <div class="col-sm-10">
+                <select class="form-control" [(ngModel)] = "selectEnv">
+                    <option *ngFor = "let o of optionEnv">{{o.name}}</option>
+                </select>
+            </div>
+            <div class="col-sm-2 lable-input ">Deployment ID:</div>
+            <div class="col-sm-10 input-content ">
+                <input class="form-control" placeholder="Ex: Production#7, Dev#2,..." type="text" [(ngModel)]="deploymentId">
+            </div>
+            <div class="col-sm-2 lable-input ">From Date:</div>
+            <div class="col-sm-10 input-content ">
+                <input class="form-control" placeholder="Ex: 2019-07-17"type="text" [(ngModel)]="fromDate">
+            </div>
+            <div class="col-sm-2 lable-input ">To Date:</div>
+            <div class="col-sm-10 input-content ">
+                <input class="form-control" placeholder="Ex: 2019-07-17"type="text" type="text" [(ngModel)]="toDate">
+            </div>
+            <div class="col-sm-2 lable-input ">Time Zone:</div>
+            <div class="col-sm-10">
+                    <select class="form-control" [(ngModel)] = "selectTimeZone">
+                        <option *ngFor = "let i of optionTimezone">{{i.name}}</option>
+                    </select>
+                </div>
+            <div class="col-sm-6 ">
+                <button class="btn-secondary btn btn-export" (click)="sendRequestPost(deploymentId,fromDate,toDate)">Export CSV</button>
+            </div>
+            <div class="col-sm-6"></div>
+        </div>
+    </div>
+</body>
+
+</html>
