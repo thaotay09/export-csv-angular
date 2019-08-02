@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Angular5Csv } from 'angular5-csv/dist/Angular5-csv';
 import { HttpClientModule, HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { isArray } from 'util';
 
 
 @Component({
@@ -33,7 +34,7 @@ export class AppComponent implements OnInit {
     decimalseparator: '.',
     showLabels: true,
     showTitle: true,
-    title: 'Conversation Report: ',
+    title: 'JCI Conversation Report: ',
     useBom: true,
     noDownload: false,
     headers: ["date", "conversation_id", "user_name", "start_time", "end_time", "duration", "intents", "INC_number", "INC_link"]
@@ -97,19 +98,32 @@ export class AppComponent implements OnInit {
       }
       this.http.post<string>('' + this.url, bodyData, { headers: headers })
         .subscribe(data => {
-          let dataLast = "[\n";
+          // console.log(data)
+          let dataLast = "[\n";          
           let lines = data.split("\n");
           let fields = lines[0].split(",");
           for (let i = 1; i < lines.length; i++) {
             var inte = lines[i].match(/"\s?[^"]+"/)
             lines[i] = lines[i].replace(/"\s?[^"]+"/, '')
+            var incNum = lines[i].match(/"\s?[^"]+"/)
+            lines[i] = lines[i].replace(/"\s?[^"]+"/, '')
+            var link = lines[i].match(/"\s?[^"]+"/)
+            lines[i] = lines[i].replace(/"\s?[^"]+"/, '')
+            // console.log('inte:' + inte[0] + '\n' + 'incNum' + inte[1])
+            // console.log(isArray(inte)) 
+            if(incNum)  console.log(incNum)
+            
             var linesIndex = lines[i].split(",");
             dataLast = dataLast + "\t{\n";
             for (let k = 0; k < fields.length; k++) {
               var fieldIndex = fields[k];
               if (fieldIndex == 'intents' && inte) {
                 dataLast = dataLast + '\t\t"' + fieldIndex + '"' + ":" + inte;
-              } else {
+              } else if (fieldIndex == 'INC_number' && incNum ){
+                dataLast = dataLast + '\t\t"' + fieldIndex + '"' + ":" + incNum['0'];
+              } else if (fieldIndex == 'INC_link' && incNum ){
+                dataLast = dataLast + '\t\t"' + fieldIndex + '"' + ":" + link['0'];
+              }else {
                 dataLast = dataLast + '\t\t"' + fieldIndex + '"' + ":" + '"' + linesIndex[k] + '"';
               }
               if (k != fields.length - 1) {
@@ -123,7 +137,7 @@ export class AppComponent implements OnInit {
           }
           dataLast = dataLast + "]"
           console.log(dataLast);
-          new Angular5Csv(dataLast, "conversation-report", this.csvOptions);
+          new Angular5Csv(dataLast, "JCI-conversation-report", this.csvOptions);
         }, (err: HttpErrorResponse) => {
           if (err.error instanceof Error) {
             console.log("Client-side error occured.");
