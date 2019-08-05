@@ -121,7 +121,7 @@ export class AppComponent implements OnInit {
                 dataLast = dataLast + '\t\t"' + fieldIndex + '"' + ":" + inte;
               } else if (fieldIndex == 'INC_number' && incNum ){
                 dataLast = dataLast + '\t\t"' + fieldIndex + '"' + ":" + incNum['0'];
-              } else if (fieldIndex == 'INC_link' && incNum ){
+              } else if (fieldIndex == 'INC_link' && link ){
                 dataLast = dataLast + '\t\t"' + fieldIndex + '"' + ":" + link['0'];
               }else {
                 dataLast = dataLast + '\t\t"' + fieldIndex + '"' + ":" + '"' + linesIndex[k] + '"';
