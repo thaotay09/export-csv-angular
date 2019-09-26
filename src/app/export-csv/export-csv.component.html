@@ -1,0 +1,33 @@
+<h1>OCIO Conversation Report</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2 lable-input" style="margin-top: 0px;">Enviroment:</div>
+        <div class="col-sm-10">
+            <select class="form-control" [(ngModel)] = "selectEnv">
+                <option *ngFor = "let o of optionEnv">{{o.name}}</option>
+            </select>
+        </div>
+        <div class="col-sm-2 lable-input ">Deployment ID:</div>
+        <div class="col-sm-10 input-content ">
+            <input class="form-control" placeholder="Ex: Production#7, Dev#2,..." type="text" [(ngModel)]="deploymentId">
+        </div>
+        <div class="col-sm-2 lable-input ">From Date:</div>
+        <div class="col-sm-10 input-content ">
+            <input class="form-control" placeholder="Ex: 2019-07-17"type="text" [(ngModel)]="fromDate">
+        </div>
+        <div class="col-sm-2 lable-input ">To Date:</div>
+        <div class="col-sm-10 input-content ">
+            <input class="form-control" placeholder="Ex: 2019-07-17"type="text" type="text" [(ngModel)]="toDate">
+        </div>
+        <div class="col-sm-2 lable-input ">Time Zone:</div>
+        <div class="col-sm-10">
+                <select class="form-control" [(ngModel)] = "selectTimeZone">
+                    <option *ngFor = "let i of optionTimezone">{{i.name}}</option>
+                </select>
+            </div>
+        <div class="col-sm-6 ">
+            <button class="btn-secondary btn btn-export" (click)="sendRequestPost(deploymentId,fromDate,toDate)">Export CSV</button>
+        </div>
+        <div class="col-sm-6"></div>
+    </div>
+</div>
