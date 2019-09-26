@@ -1,0 +1,31 @@
+div{
+    height: 7vh;
+}
+
+.container{
+    margin-top: 25px;
+    display: flex;
+}
+
+
+.lable-input{
+    width: 100%;
+    text-align: right;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+
+.input-content{
+    margin-top: 10px;
+}
+
+h1{
+    font-family: sans-serif;
+    text-align: center;
+} 
+
+.btn-export{
+    align-items: right;
+    float: right;
+    margin-top: 10vh;
+}

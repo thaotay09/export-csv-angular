@@ -20,10 +20,12 @@ export class LoginPageComponent implements OnInit {
   	var username = e.target.elements[0].value;
   	var password = e.target.elements[1].value;
   	
-  	if(username == 'admin' && password == 'admin') {
+  	if(username == 'admin' && password == 'admin@123') {
       this.user.setUserLoggedIn();
   		this.router.navigate(['dashboard']);
-  	}
+  	}else{
+      alert('Username or password is incorrect')
+    }
   }
 
 }
