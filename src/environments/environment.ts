@@ -5,20 +5,20 @@
 export const environment = {
   production: false,
 
-  // apiEndpoint: "https://api.us-south.apiconnect.appdomain.cloud/dxcvirtualagent-va-jci-prod/jci-prod-catalog-api/api/ConversationReports/load",
-  // clientId: "6c8457bf-8a15-4827-82e4-4c14b5d78ae7",
-  // clientSecret: "vL2qM1jQ5yV1fP3jQ1eB2cM1oO2jA1xP2lM0sR3kD7kL1yC1gN",
-  // userEmail:"m-kmagnus@myworkstyle.info",
+  apiEndpoint: "https://api.us-south.apiconnect.appdomain.cloud/dxcvirtualagent-va-ji-prod/jci-prod-catalog-api/api/ConversationReports/load",
+  clientId: "6c8457bf-8a15-4827-82e4-4c14b5d78ae7",
+  clientSecret: "vL2qM1jQ5yV1fP3jQ1eB2cM1oO2jA1xP2lM0sR3kD7kL1yC1gN",
+  userEmail:"m-kmagnus@myworkstyle.info",
 
 
 
-  apiEndpointDev:" https://api.us-south.apiconnect.appdomain.cloud/dxcvirtualagent-va-ocio-dev23/ocio-dev-catalog-api/api/ConversationReports/load",
+  apiEndpointDev:"https://api.us-south.apiconnect.appdomain.cloud/dxcvirtualagent-va-ocio-dev23/ocio-dev-catalog-api/api/ConversationReports/load",
   clientIdDev:"d7c84d12-80c9-4827-af59-79c71a48db51",
   clientSecretDev:"F4pH5tI5yW8qF2eA6pB2lV8bV7bE8bR6eL2lB3sC5cM7fM4qL8",
 
-  // apiEndpointTest:"https://api.us-south.apiconnect.appdomain.cloud/dxcvirtualagent-va-jci-test/jci-test-catalog-api/api/ConversationReports/load",
-  // clientIdTest:"62a0094f-6d0d-43ee-8472-eb6175db37a4",
-  // clientSecretTest:"oK2kM8aQ8eR2wS0gT6qC7oM5mO2tF7sQ7kE7eD7iB4lN3wH4dV",
+  apiEndpointTest:"https://api.us-south.apiconnect.appdomain.cloud/dxcvirtualagent-va-ji-test/jci-test-catalog-api/api/ConversationReports/load",
+  clientIdTest:"62a0094f-6d0d-43ee-8472-eb6175db37a4",
+  clientSecretTest:"oK2kM8aQ8eR2wS0gT6qC7oM5mO2tF7sQ7kE7eD7iB4lN3wH4dV",
   
 
   
