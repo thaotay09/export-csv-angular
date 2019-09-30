@@ -16,9 +16,9 @@ export const environment = {
   clientIdDev:"d7c84d12-80c9-4827-af59-79c71a48db51",
   clientSecretDev:"F4pH5tI5yW8qF2eA6pB2lV8bV7bE8bR6eL2lB3sC5cM7fM4qL8",
 
-  apiEndpointTest:"https://api.us-south.apiconnect.appdomain.cloud/dxcvirtualagent-va-ji-test/jci-test-catalog-api/api/ConversationReports/load",
-  clientIdTest:"62a0094f-6d0d-43ee-8472-eb6175db37a4",
-  clientSecretTest:"oK2kM8aQ8eR2wS0gT6qC7oM5mO2tF7sQ7kE7eD7iB4lN3wH4dV",
+  apiEndpointTest:"https://api.us-south.apiconnect.appdomain.cloud/dxcvirtualagent-va-ocio-test23/ocio-test-catalog-api/ConversationReports/load",
+  clientIdTest:"4142070a-3481-4028-bccb-eb80d8e485f9",
+  clientSecretTest:"C7fE4sW0bU0mW0rW0gB3gD5lW4oO4dE0vF6jA6iY8kX6pR2uR2",
   
 
   
