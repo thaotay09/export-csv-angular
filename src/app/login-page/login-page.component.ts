@@ -14,18 +14,23 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() {
     console.log('hit');
   }
-  loginUser(e) {
-  	e.preventDefault();
-  	console.log(e);
-  	var username = e.target.elements[0].value;
-  	var password = e.target.elements[1].value;
+  // loginUser(e) {
+  // 	e.preventDefault();
+  // 	console.log(e);
+  // 	var username = e.target.elements[0].value;
+  // 	var password = e.target.elements[1].value;
   	
-  	if(username == 'admin' && password == 'AdM!n@123') {
-      this.user.setUserLoggedIn();
-  		this.router.navigate(['dashboard']);
-  	}else{
-      alert('Username or password is incorrect')
-    }
-  }
+  // 	if(username == 'admin' && password == 'AdM!n@123') {
+  //     this.user.setUserLoggedIn();
+  // 		this.router.navigate(['dashboard']);
+  // 	}else{
+  //     alert('Username or password is incorrect')
+  //   }
+  // }
+
+  loginUser() {
+    this.user.setUserLoggedIn();
+    this.router.navigate(['dashboard']);
+}
 
 }

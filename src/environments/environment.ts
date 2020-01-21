@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
 
-  apiEndpoint: "https://api.us-south.apiconnect.appdomain.cloud/dxcvirtualagent-va-ji-prod/jci-prod-catalog-api/api/ConversationReports/load",
-  clientId: "6c8457bf-8a15-4827-82e4-4c14b5d78ae7",
-  clientSecret: "vL2qM1jQ5yV1fP3jQ1eB2cM1oO2jA1xP2lM0sR3kD7kL1yC1gN",
+  apiEndpoint: "https://api.us-south.apiconnect.appdomain.cloud/dxcvirtualagent-va-ocio-prod/ocio-prod-catalog-api/api/ConversationReports/load",
+  clientId: "d624c9d3-e468-41b5-a5cf-8bd6a7cb2a49",
+  clientSecret: "eB8bH3nU8gC2rT1bV3dR8hC0cK1jA5kX0tR6lX1yA8eF1hA1hS",
   userEmail:"m-kmagnus@myworkstyle.info",
 
 
